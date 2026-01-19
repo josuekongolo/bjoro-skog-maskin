@@ -1,0 +1,402 @@
+/* =====================================================
+   Bjørø Skog & Maskin - Responsive Styles
+   ===================================================== */
+
+/* =====================================================
+   Tablet (768px+)
+   ===================================================== */
+@media (min-width: 768px) {
+    /* Typography */
+    :root {
+        --fs-h1: 2.75rem;
+        --fs-h2: 2rem;
+        --fs-h3: 1.5rem;
+    }
+
+    /* Header */
+    .header__container {
+        padding: var(--spacing-sm) var(--spacing-lg);
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    /* Hero */
+    .hero {
+        min-height: 85vh;
+    }
+
+    .hero__title {
+        font-size: 2.5rem;
+    }
+
+    .hero__subtitle {
+        font-size: 1.25rem;
+    }
+
+    /* Services Grid */
+    .services__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-lg);
+    }
+
+    /* Why Us Grid */
+    .why-us__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Service Area */
+    .service-area__content {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Service Detail */
+    .service-detail__content {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .service-detail:nth-child(even) .service-detail__content {
+        direction: rtl;
+    }
+
+    .service-detail:nth-child(even) .service-detail__content > * {
+        direction: ltr;
+    }
+
+    /* About Page */
+    .about-intro__content {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Values Grid */
+    .values__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Projects Categories */
+    .projects__categories {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Contact Section */
+    .contact-section__content {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Footer */
+    .footer__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Quick Contact */
+    .quick-contact__container {
+        gap: var(--spacing-xl);
+    }
+}
+
+/* =====================================================
+   Desktop (1024px+)
+   ===================================================== */
+@media (min-width: 1024px) {
+    /* Typography */
+    :root {
+        --fs-h1: 3rem;
+        --fs-h2: 2.25rem;
+    }
+
+    /* Header */
+    .menu-toggle {
+        display: none;
+    }
+
+    .mobile-nav {
+        display: none !important;
+    }
+
+    .nav {
+        display: flex;
+    }
+
+    .header__cta {
+        display: block;
+        margin-left: var(--spacing-lg);
+    }
+
+    .header__cta .btn {
+        padding: var(--spacing-xs) var(--spacing-md);
+        font-size: var(--fs-small);
+    }
+
+    /* Hero */
+    .hero {
+        padding: var(--spacing-xxl) 0;
+    }
+
+    .hero__title {
+        font-size: 3rem;
+    }
+
+    /* Services Grid */
+    .services__grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Why Us Grid */
+    .why-us__grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Values Grid */
+    .values__grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    /* Projects Categories */
+    .projects__categories {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Footer */
+    .footer__grid {
+        grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    }
+
+    /* Contact Form */
+    .contact-form {
+        padding: var(--spacing-xl);
+    }
+
+    /* Form Layout */
+    .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-md);
+    }
+}
+
+/* =====================================================
+   Large Desktop (1200px+)
+   ===================================================== */
+@media (min-width: 1200px) {
+    /* Container */
+    .container {
+        padding: 0 var(--spacing-lg);
+    }
+
+    /* Hero */
+    .hero__content {
+        max-width: 900px;
+    }
+
+    .hero__title {
+        font-size: 3.25rem;
+    }
+
+    /* Service Detail */
+    .service-detail__image img {
+        height: 400px;
+    }
+
+    /* About Image */
+    .about-intro__image img {
+        height: 450px;
+    }
+}
+
+/* =====================================================
+   Extra Large (1400px+)
+   ===================================================== */
+@media (min-width: 1400px) {
+    :root {
+        --fs-h1: 3.5rem;
+    }
+}
+
+/* =====================================================
+   Print Styles
+   ===================================================== */
+@media print {
+    .header,
+    .footer,
+    .mobile-nav,
+    .quick-contact,
+    .cta,
+    .btn {
+        display: none !important;
+    }
+
+    .hero {
+        margin-top: 0;
+        min-height: auto;
+        padding: var(--spacing-lg) 0;
+        color: var(--color-text);
+        background: none;
+    }
+
+    .hero__title,
+    .page-header__title {
+        color: var(--color-text);
+    }
+
+    .section {
+        padding: var(--spacing-md) 0;
+    }
+
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+    }
+
+    a {
+        text-decoration: underline;
+    }
+
+    .service-card,
+    .value-card {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid var(--color-border);
+    }
+}
+
+/* =====================================================
+   Reduced Motion
+   ===================================================== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* =====================================================
+   Dark Mode Support (optional future enhancement)
+   ===================================================== */
+@media (prefers-color-scheme: dark) {
+    /* Uncomment to enable dark mode support
+    :root {
+        --color-light: #1a1a1a;
+        --color-white: #0d0d0d;
+        --color-text: #f0f0f0;
+        --color-text-light: #b0b0b0;
+        --color-border: #333333;
+    }
+
+    .header {
+        background-color: #0d0d0d;
+    }
+
+    .service-card,
+    .value-card,
+    .contact-form,
+    .pricing__list {
+        background-color: #1a1a1a;
+    }
+    */
+}
+
+/* =====================================================
+   High Contrast Mode
+   ===================================================== */
+@media (prefers-contrast: high) {
+    :root {
+        --color-primary: #1a4a14;
+        --color-accent: #7a5a00;
+    }
+
+    .btn {
+        border: 2px solid currentColor;
+    }
+
+    .service-card,
+    .value-card {
+        border: 2px solid var(--color-text);
+    }
+}
+
+/* =====================================================
+   Touch Device Optimizations
+   ===================================================== */
+@media (hover: none) and (pointer: coarse) {
+    /* Larger touch targets */
+    .btn {
+        min-height: 48px;
+        min-width: 48px;
+    }
+
+    .nav__link,
+    .mobile-nav__link {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        min-height: 48px;
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+
+    /* Remove hover effects that can stick on touch */
+    .service-card:hover,
+    .category-card:hover {
+        transform: none;
+    }
+}
+
+/* =====================================================
+   Landscape Phone Adjustments
+   ===================================================== */
+@media (max-width: 767px) and (orientation: landscape) {
+    .hero {
+        min-height: auto;
+        padding: var(--spacing-lg) 0;
+    }
+
+    .hero__title {
+        font-size: 1.75rem;
+    }
+
+    .page-header {
+        padding: var(--spacing-lg) 0;
+    }
+}
+
+/* =====================================================
+   Small Phone Adjustments (320px)
+   ===================================================== */
+@media (max-width: 359px) {
+    :root {
+        --fs-h1: 1.75rem;
+        --fs-h2: 1.5rem;
+        --fs-body: 0.9375rem;
+    }
+
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+
+    .hero__buttons {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .service-area__list {
+        grid-template-columns: 1fr;
+    }
+
+    .quick-contact__container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
